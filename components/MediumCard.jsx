@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from "next/image"
 const MediumCard = ({img,title}) => {
-    console.log(title);
     return (
         <div className="cursor-pointer hover:scale-90 transition transform duration-300 ease-in">
             <div className="relative h-80 w-80 ">

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Header, Banner, SmallCard,MediumCard,LargeCard,Footer } from './reusable-components'
+import { Header, Banner, SmallCard,MediumCard,LargeCard,Footer } from '../components'
 
 
 export default function Home({exploreData,exploreData2}) {

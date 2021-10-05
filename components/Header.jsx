@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import {SearchIcon,MenuIcon,UserCircleIcon,UserIcon,GlobeAltIcon} from "@heroicons/react/solid"
+import {SearchIcon,MenuIcon,UserCircleIcon,GlobeAltIcon} from "@heroicons/react/solid"
 const Header = () => {
     return (
         <header className="sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10">
