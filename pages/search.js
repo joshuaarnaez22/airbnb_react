@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
-import { Header,Footer } from '../components'
+import React from 'react'
+import { Header,Footer,InfoCard } from '../components'
 import {format} from 'date-fns'
-const Search = () => {
+const Search = ({data}) => {
     const router = useRouter()
     if(!router.isReady){
         return null
@@ -10,10 +10,9 @@ const Search = () => {
     const {location,start_date,end_date,numberOfGuests} = router.query
     const formatted_start_date = format(new Date(start_date), 'dd MMMM yy')
     const formatted_end_date = format(new Date(end_date), 'dd MMMM yy')
-
     return (
         <div>
-            <Header/>
+            <Header placeholder={`${location} | ${formatted_start_date} - ${formatted_end_date} | ${numberOfGuests} guests`}/>
             <main className="flex">
                 <section className="px-5 pt-14 flex-grow">
                     <p className="text-sm">300+ Stays - {formatted_start_date} - {formatted_end_date} - for <span className="font-bold">{numberOfGuests}</span> guests</p>
@@ -25,12 +24,35 @@ const Search = () => {
                         <button className="button">Price</button>
                         <button className="button">Room and Beds</button>
                         <button className="button">More Filters</button>
+                            
+                    </div>
+
+                    <div className="mt-5">
+                    { data?.map(({img,location,title,description,lat,long,price,star,total}) => (
+                            <InfoCard key={img} img = {img}
+                            location = {location}
+                            title = {title}
+                            description = {description}
+                            lat = {lat}
+                            long = {long}
+                            price = {price}
+                            star = {star}
+                            total = {total}/>
+                             ))}
                     </div>
                 </section>
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }
 
 export default Search
+
+export async function getServerSideProps() {
+    const res = await fetch("https://links.papareact.com/isz")
+    const data =await res.json()
+    return {
+      props: {data}, 
+    }
+  }
