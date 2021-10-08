@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import React from 'react'
-import { Header,Footer,InfoCard } from '../components'
+import { Header,Footer,InfoCard,Map } from '../components'
 import {format} from 'date-fns'
 const Search = ({data}) => {
     const router = useRouter()
@@ -40,6 +40,9 @@ const Search = ({data}) => {
                             total = {total}/>
                              ))}
                     </div>
+                </section>
+                <section className="hidden md:inline-flex md:min-w-[1200px]">
+                        <Map data={data}/>
                 </section>
             </main>
             <Footer />

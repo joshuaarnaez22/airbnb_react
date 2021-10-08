@@ -9,10 +9,14 @@
     "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.4",
     "date-fns": "^2.25.0",
+    "deck.gl": "^8.5.10",
+    "geolib": "^3.3.1",
     "next": "latest",
     "react": "^17.0.2",
     "react-date-range": "^1.4.0",
     "react-dom": "^17.0.2",
+    "react-map-gl": "^6.1.17",
+    "react-map-gl-geocoder": "^2.2.0",
     "tailwind-scrollbar-hide": "^1.0.3"
   },
   "devDependencies": {
