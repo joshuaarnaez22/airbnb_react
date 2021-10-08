@@ -41,7 +41,7 @@ const Search = ({data}) => {
                              ))}
                     </div>
                 </section>
-                <section className="min-w-[1200px]">
+                <section className="hidden lg:inline-block lg:w-1/2">
                         <Map data={data}/>
                 </section>
             </main>

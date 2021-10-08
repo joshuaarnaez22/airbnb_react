@@ -16,7 +16,6 @@ const Map = ({data}) => {
         latitude: center.latitude,
         longitude: center.longitude,
         zoom: 8,
-        width:"100%",
         height:"100%",
         transitionDuration: 3000
       });
